@@ -1,6 +1,5 @@
 -- Make audit_log append-only at the DB level: the application role may INSERT and SELECT,
--- but never UPDATE or DELETE. Tamper-evidence (hash chain) is added in M10; this is the
--- complementary "can't rewrite history" control.
+-- but never UPDATE or DELETE.
 --
 -- In M1 the app will connect as a least-privilege role 'app_user' (created here).
 -- For now (infra-only boot) we just create the role and lock down audit_log.

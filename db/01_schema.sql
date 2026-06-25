@@ -74,7 +74,7 @@ CREATE TABLE pin_sessions (
 );
 
 -- ===================== AUDIT (append-only) ========================
--- Written by the MCP server IN THE SAME TX as the action. Hash-chained (M10).
+-- Written by the MCP server IN THE SAME TX as the action.
 CREATE TABLE audit_log (
     seq            BIGSERIAL PRIMARY KEY,
     correlation_id TEXT NOT NULL,     -- == OTel trace id
@@ -85,7 +85,5 @@ CREATE TABLE audit_log (
     decision       TEXT NOT NULL,     -- 'allow' | 'deny'
     reason         TEXT,              -- 'ownership_violation', 'step_up_required', ...
     result         JSONB,
-    prev_hash      TEXT NOT NULL,
-    row_hash       TEXT NOT NULL,
     created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
 );

@@ -4,7 +4,7 @@ SHELL := /bin/bash
 POSTGRES_USER ?= bank
 POSTGRES_DB   ?= bank
 
-.PHONY: help up down reset logs psql kb ingest demo test verify-audit gateway mcp agent hash
+.PHONY: help up down reset logs psql kb ingest demo test gateway mcp agent hash
 
 up: ## Start infra + agent (Postgres, Jaeger, Python agent) — no key setup needed
 	docker compose up -d
