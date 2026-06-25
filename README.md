@@ -1,6 +1,6 @@
 # Agente de Atendimento Bancário Inteligente
 
-Solução para o desafio técnico Itaú: um agente de IA conversacional para autoatendimento bancário.
+Um agente de IA conversacional para autoatendimento bancário.
 
 ---
 
