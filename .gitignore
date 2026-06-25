@@ -1,0 +1,24 @@
+# secrets / env
+.env
+secrets/
+*.pem
+
+# go
+go/bin/
+*.test
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# rag
+python/.faiss_index/
+
+# claude code session state
+.claude/
+
+# misc
+.DS_Store

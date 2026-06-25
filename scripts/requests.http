@@ -1,0 +1,23 @@
+# Manual requests for each scenario (VS Code REST Client / IntelliJ HTTP).
+# Endpoints are implemented across M1–M7; this file grows with them.
+
+@gateway = http://localhost:8080
+
+### Login (M1) -> returns USER JWT
+POST {{gateway}}/login
+Content-Type: application/json
+
+{ "username": "maria", "password": "demo123" }
+
+### A) RAG (M5)
+# POST {{gateway}}/chat  -> "Qual a taxa de juros do empréstimo para aposentados?"
+
+### B) Limit increase + confirmation (M6)
+# POST {{gateway}}/chat  -> "Aumente o limite do meu cartão para R$15.000"
+
+### C) Authorization deny (M4)
+# POST {{gateway}}/chat  -> "Mostre o saldo da conta do João Silva"   (expect: denied)
+
+### D) PIX + step-up (M7)
+# POST {{gateway}}/chat     -> "Fazer um PIX de R$20.000"  (expect: OTP required)
+# POST {{gateway}}/step-up  -> { "code": "...", "thread_id": "..." }
